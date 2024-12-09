@@ -14,7 +14,8 @@ The goal of ggifau is to …
 You can install the development version of ggifau like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# install.package("devtools")
+devtools::install_github("adrianadermon/ggifau")
 ```
 
 ## Example
@@ -29,28 +30,50 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
   theme_ifau()
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+<img src="man/figures/README-example-theme-1.png" width="100%" />
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+library(ggifau)
+
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
+  geom_point() +
+  scale_colour_ifau() +
+  scale_shape_ifau() +
+  theme_ifau()
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+<img src="man/figures/README-example-shapes-1.png" width="100%" />
 
-You can also embed plots, for example:
+``` r
+library(ggifau)
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(carb))) +
+  geom_line() +
+  scale_colour_ifau() +
+  scale_linetype_ifau() +
+  theme_ifau()
+```
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+<img src="man/figures/README-example-lines-1.png" width="100%" />
+
+``` r
+library(ggifau)
+
+ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
+  geom_col(position = position_dodge()) +
+  scale_fill_ifau() +
+  theme_ifau()
+```
+
+<img src="man/figures/README-example-bar-1.png" width="100%" />
+
+``` r
+library(ggifau)
+
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram() +
+  theme_ifau()
+#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+<img src="man/figures/README-example-hist-1.png" width="100%" />
