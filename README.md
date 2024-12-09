@@ -22,9 +22,13 @@ devtools::install_github("adrianadermon/ggifau")
 
 This is a basic example which shows you how to solve a common problem:
 
+Load the package:
+
 ``` r
 library(ggifau)
+```
 
+``` r
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
   geom_point() +
   theme_ifau()
@@ -33,8 +37,6 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
 <img src="man/figures/README-example-theme-1.png" width="100%" />
 
 ``` r
-library(ggifau)
-
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
   geom_point() +
   scale_colour_ifau() +
@@ -45,8 +47,6 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
 <img src="man/figures/README-example-shapes-1.png" width="100%" />
 
 ``` r
-library(ggifau)
-
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(carb))) +
   geom_line() +
   scale_colour_ifau() +
@@ -57,8 +57,6 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(ca
 <img src="man/figures/README-example-lines-1.png" width="100%" />
 
 ``` r
-library(ggifau)
-
 ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
   geom_col(position = position_dodge()) +
   scale_fill_ifau() +
@@ -68,8 +66,6 @@ ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
 <img src="man/figures/README-example-bar-1.png" width="100%" />
 
 ``` r
-library(ggifau)
-
 ggplot(mtcars, aes(x = mpg)) +
   geom_histogram() +
   theme_ifau()
@@ -77,3 +73,23 @@ ggplot(mtcars, aes(x = mpg)) +
 ```
 
 <img src="man/figures/README-example-hist-1.png" width="100%" />
+
+The `ggifau()` function sets the default theme, default colors, and
+updates some aesthetics.
+
+``` r
+ggifau()
+
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
+  geom_point()
+```
+
+<img src="man/figures/README-example-all-1.png" width="100%" />
+
+``` r
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram()
+#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+<img src="man/figures/README-example-hist2-1.png" width="100%" />

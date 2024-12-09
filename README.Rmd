@@ -33,9 +33,12 @@ devtools::install_github("adrianadermon/ggifau")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example-theme}
+Load the package:
+```{r load-package}
 library(ggifau)
+```
 
+```{r example-theme}
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
   geom_point() +
   theme_ifau()
@@ -43,8 +46,6 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
 
 
 ```{r example-shapes}
-library(ggifau)
-
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
   geom_point() +
   scale_colour_ifau() +
@@ -53,8 +54,6 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
 ```
 
 ```{r example-lines}
-library(ggifau)
-
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(carb))) +
   geom_line() +
   scale_colour_ifau() +
@@ -63,8 +62,6 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(ca
 ```
 
 ```{r example-bar}
-library(ggifau)
-
 ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
   geom_col(position = position_dodge()) +
   scale_fill_ifau() +
@@ -72,9 +69,21 @@ ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
 ```
 
 ```{r example-hist}
-library(ggifau)
-
 ggplot(mtcars, aes(x = mpg)) +
   geom_histogram() +
   theme_ifau()
+```
+
+
+The `ggifau()` function sets the default theme, default colors, and updates some aesthetics.
+```{r example-all}
+ggifau()
+
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
+  geom_point()
+```
+
+```{r example-hist2}
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram()
 ```
