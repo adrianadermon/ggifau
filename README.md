@@ -23,9 +23,13 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(ggifau)
-#> Loading required package: ggplot2
-## basic example code
+
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
+  geom_point() +
+  theme_ifau()
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
 
 What is special about using `README.Rmd` instead of just `README.md`?
 You can include R chunks like so:
