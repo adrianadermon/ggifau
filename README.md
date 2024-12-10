@@ -34,7 +34,7 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
   theme_ifau()
 ```
 
-<img src="man/figures/README-example-theme-1.png" width="100%" />
+<img src="man/figures/README-example-theme-1.svg" width="100%" />
 
 ``` r
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
@@ -44,7 +44,7 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
   theme_ifau()
 ```
 
-<img src="man/figures/README-example-shapes-1.png" width="100%" />
+<img src="man/figures/README-example-shapes-1.svg" width="100%" />
 
 ``` r
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(carb))) +
@@ -54,7 +54,7 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(ca
   theme_ifau()
 ```
 
-<img src="man/figures/README-example-lines-1.png" width="100%" />
+<img src="man/figures/README-example-lines-1.svg" width="100%" />
 
 ``` r
 ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
@@ -63,7 +63,7 @@ ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
   theme_ifau()
 ```
 
-<img src="man/figures/README-example-bar-1.png" width="100%" />
+<img src="man/figures/README-example-bar-1.svg" width="100%" />
 
 ``` r
 ggplot(mtcars, aes(x = mpg)) +
@@ -72,7 +72,7 @@ ggplot(mtcars, aes(x = mpg)) +
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-example-hist-1.png" width="100%" />
+<img src="man/figures/README-example-hist-1.svg" width="100%" />
 
 The `ggifau()` function sets the default theme, default colors, and
 updates some aesthetics.
@@ -84,7 +84,7 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
   geom_point()
 ```
 
-<img src="man/figures/README-example-all-1.png" width="100%" />
+<img src="man/figures/README-example-all-1.svg" width="100%" />
 
 ``` r
 ggplot(mtcars, aes(x = mpg)) +
@@ -92,4 +92,4 @@ ggplot(mtcars, aes(x = mpg)) +
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-example-hist2-1.png" width="100%" />
+<img src="man/figures/README-example-hist2-1.svg" width="100%" />

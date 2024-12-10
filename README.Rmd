@@ -9,7 +9,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  dev = "svg"
 )
 ```
 
@@ -43,7 +44,6 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
   geom_point() +
   theme_ifau()
 ```
-
 
 ```{r example-shapes}
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
