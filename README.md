@@ -18,9 +18,7 @@ You can install the development version of ggifau like so:
 devtools::install_github("adrianadermon/ggifau")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+## Usage
 
 Load the package:
 
@@ -28,30 +26,45 @@ Load the package:
 library(ggifau)
 ```
 
+To apply the full IFAU theme, first run
+
+``` r
+set_geoms_ifau()
+```
+
+to change the default options for some `ggplot2` geoms. Then use the
+`theme_ifau()` function in your call to `ggplot2`:
+
 ``` r
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
   geom_point() +
   theme_ifau()
 ```
 
-<img src="man/figures/README-example-theme-1.svg" width="100%" />
+<img src="man/figures/README-full-theme-1.svg" width="100%" /> This
+applies some theme changes to the background, axes, text, grid and so
+on. In addition, it applies custom scales for colors, marked shapes, and
+lines. The following call, which applies each scale and the minimal
+theme separately, is equivalent:
 
 ``` r
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
   geom_point() +
-  scale_colour_ifau() +
+  scale_color_ifau() +
+  scale_fill_ifau() +
   scale_shape_ifau() +
-  theme_ifau()
+  scale_linetype_ifau() +
+  theme_ifau_minimal()
 ```
 
-<img src="man/figures/README-example-shapes-1.svg" width="100%" />
+<img src="man/figures/README-full-theme-explicit-1.svg" width="100%" />
 
 ``` r
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(carb))) +
   geom_line() +
   scale_colour_ifau() +
   scale_linetype_ifau() +
-  theme_ifau()
+  theme_ifau_minimal()
 ```
 
 <img src="man/figures/README-example-lines-1.svg" width="100%" />
@@ -60,36 +73,25 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(ca
 ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
   geom_col(position = position_dodge()) +
   scale_fill_ifau() +
-  theme_ifau()
+  theme_ifau_minimal()
 ```
 
 <img src="man/figures/README-example-bar-1.svg" width="100%" />
 
 ``` r
 ggplot(mtcars, aes(x = mpg)) +
-  geom_histogram() +
+  geom_histogram(bins = 30) +
   theme_ifau()
-#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
 <img src="man/figures/README-example-hist-1.svg" width="100%" />
 
-The `ggifau()` function sets the default theme, default colors, and
-updates some aesthetics.
-
 ``` r
-ggifau()
-
-ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
-  geom_point()
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb), linetype = factor(carb))) +
+  geom_line() +
+  geom_point() +
+  geom_vline(aes(xintercept = 200)) +
+  theme_ifau()
 ```
 
-<img src="man/figures/README-example-all-1.svg" width="100%" />
-
-``` r
-ggplot(mtcars, aes(x = mpg)) +
-  geom_histogram()
-#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-```
-
-<img src="man/figures/README-example-hist2-1.svg" width="100%" />
+<img src="man/figures/README-line-point-1.svg" width="100%" />
