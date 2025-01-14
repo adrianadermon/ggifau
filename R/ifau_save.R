@@ -1,5 +1,6 @@
 #' Export graph to file
 #' 
+#' @inheritParams ggplot2::ggsave
 #' @export
 ifau_save <- ggsave
 

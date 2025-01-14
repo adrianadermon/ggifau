@@ -10,14 +10,14 @@ bar_defaults <- ggplot2::GeomBar$default_aes
 #'
 #' @export
 set_geoms_ifau <- function() {
-        ggplot2::update_geom_defaults("line", ggplot2::aes(linewidth = 1/(0.75*.pt)))
+        ggplot2::update_geom_defaults("line", ggplot2::aes(linewidth = 1/(0.75*ggplot2::.pt)))
         ggplot2::update_geom_defaults("vline", ggplot2::aes(
-                linewidth = 0.5/(0.75*.pt),
+                linewidth = 0.5/(0.75*ggplot2::.pt),
                 color = "#8B8E8F",
                 linetype = "solid"
         ))
         ggplot2::update_geom_defaults("hline", ggplot2::aes(
-                linewidth = 0.5/(0.75*.pt),
+                linewidth = 0.5/(0.75*ggplot2::.pt),
                 color = "#8B8E8F",
                 linetype = "solid"
         ))
