@@ -24,6 +24,7 @@ Load the package:
 
 ``` r
 library(ggifau)
+#> Loading required package: ggplot2
 ```
 
 To apply the full IFAU theme, first run
