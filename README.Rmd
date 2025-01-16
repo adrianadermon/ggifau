@@ -34,6 +34,7 @@ devtools::install_github("adrianadermon/ggifau")
 
 Load the package:
 ```{r load-package}
+library(ggplot2)
 library(ggifau)
 ```
 
