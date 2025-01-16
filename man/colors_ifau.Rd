@@ -4,11 +4,11 @@
 \alias{colors_ifau}
 \title{IFAU colors}
 \usage{
-colors_ifau(n)
+colors_ifau(n = 7)
 }
 \arguments{
 \item{n}{Number of colors}
 }
 \description{
-IFAU colors
+Return a vector of the first \code{n} colors from the IFAU color scheme.
 }

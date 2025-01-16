@@ -10,5 +10,5 @@ scale_linetype_ifau(...)
 \item{...}{Arguments passed on to \code{discrete_scale}}
 }
 \description{
-IFAU linetype scale
+Use IFAU patterns for \code{ggplot2} lines.
 }

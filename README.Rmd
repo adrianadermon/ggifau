@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ggifau is to ...
+The goal of `ggifau` is to produce [`ggplot2`](https://ggplot2.tidyverse.org/) graphs which conform to the graphical profile of the [Institute for Evaluation of Labour Market and Education Policy (IFAU)](https://www.ifau.se/en/) policy reports.
 
 ## Installation
 
@@ -43,7 +43,6 @@ To apply the full IFAU theme, first run
 set_geoms_ifau()
 ```
 to change the default options for some `ggplot2` geoms. Then use the `theme_ifau()` function in your call to `ggplot2`:
-
 ```{r full-theme}
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb))) +
   geom_point() +
@@ -60,20 +59,18 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
   theme_ifau_minimal()
 ```
 
+Below are some further examples. 
 
 ```{r example-lines}
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(carb))) +
   geom_line() +
-  scale_colour_ifau() +
-  scale_linetype_ifau() +
-  theme_ifau_minimal()
+  theme_ifau()
 ```
 
 ```{r example-bar}
 ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
   geom_col(position = position_dodge()) +
-  scale_fill_ifau() +
-  theme_ifau_minimal()
+  theme_ifau()
 ```
 
 ```{r example-hist}
@@ -88,4 +85,9 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
   geom_point() +
   geom_vline(aes(xintercept = 200)) +
   theme_ifau()
+```
+
+To save a plot to file, use the `ifau_save()` function. This is a simple wrapper for the `ggsave` function from the `ggplot2` package, which sets the default width and height to appropriate values for IFAU reports.
+```{r save}
+ifau_save("example.svg")
 ```

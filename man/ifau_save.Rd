@@ -61,5 +61,9 @@ a prompt will appear asking to create a new directory when necessary.}
 as specified by \code{device}.}
 }
 \description{
-Export graph to file
+\code{ifau_save()} is a simple wrapper for \code{ggsave} from the \code{ggplot2} package,
+setting the default width and height to the appropriate values for IFAU reports.
+}
+\seealso{
+\link[ggplot2:ggsave]{ggplot2::ggsave} which this function wraps.
 }

@@ -7,7 +7,10 @@
 
 <!-- badges: end -->
 
-The goal of ggifau is to …
+The goal of `ggifau` is to produce
+[`ggplot2`](https://ggplot2.tidyverse.org/) graphs which conform to the
+graphical profile of the [Institute for Evaluation of Labour Market and
+Education Policy (IFAU)](https://www.ifau.se/en/) policy reports.
 
 ## Installation
 
@@ -23,8 +26,8 @@ devtools::install_github("adrianadermon/ggifau")
 Load the package:
 
 ``` r
+library(ggplot2)
 library(ggifau)
-#> Loading required package: ggplot2
 #> Loading required package: svglite
 ```
 
@@ -61,12 +64,12 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
 
 <img src="man/figures/README-full-theme-explicit-1.svg" width="100%" />
 
+Below are some further examples.
+
 ``` r
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(carb))) +
   geom_line() +
-  scale_colour_ifau() +
-  scale_linetype_ifau() +
-  theme_ifau_minimal()
+  theme_ifau()
 ```
 
 <img src="man/figures/README-example-lines-1.svg" width="100%" />
@@ -74,8 +77,7 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), linetype = factor(ca
 ``` r
 ggplot(mtcars, aes(x = gear, y = mpg, fill = factor(carb))) +
   geom_col(position = position_dodge()) +
-  scale_fill_ifau() +
-  theme_ifau_minimal()
+  theme_ifau()
 ```
 
 <img src="man/figures/README-example-bar-1.svg" width="100%" />
@@ -97,3 +99,11 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(carb), shape = factor(carb)
 ```
 
 <img src="man/figures/README-line-point-1.svg" width="100%" />
+
+To save a plot to file, use the `ifau_save()` function. This is a simple
+wrapper for the `ggsave` function from the `ggplot2` package, which sets
+the default width and height to appropriate values for IFAU reports.
+
+``` r
+ifau_save("example.svg")
+```

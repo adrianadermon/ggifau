@@ -6,7 +6,7 @@ bar_defaults <- ggplot2::GeomBar$default_aes
 
 #' Update geoms
 #'
-#' Update line and bar geoms to conform with the IFAU theme
+#' Update line and bar geoms to conform with the IFAU theme.
 #'
 #' @export
 set_geoms_ifau <- function() {
@@ -26,7 +26,7 @@ set_geoms_ifau <- function() {
 
 #' Restore geom defaults
 #'
-#' Undo the changes made by `set_geoms_ifau()`
+#' Undo the changes made by `set_geoms_ifau()`.
 #' 
 #' @export
 unset_geoms_ifau <- function() {

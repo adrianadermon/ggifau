@@ -4,11 +4,11 @@
 \alias{linetypes_ifau}
 \title{IFAU linetypes}
 \usage{
-linetypes_ifau(n)
+linetypes_ifau(n = 7)
 }
 \arguments{
 \item{n}{Number of linetypes}
 }
 \description{
-IFAU linetypes
+Return a vector of the first \code{n} line patterns from the IFAU graph scheme.
 }

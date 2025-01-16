@@ -4,11 +4,11 @@
 \alias{shapes_ifau}
 \title{IFAU shapes}
 \usage{
-shapes_ifau(n)
+shapes_ifau(n = 7)
 }
 \arguments{
 \item{n}{Number of shapes}
 }
 \description{
-IFAU shapes
+Return a vector of the first \code{n} point market shapes from the IFAU graph scheme.
 }

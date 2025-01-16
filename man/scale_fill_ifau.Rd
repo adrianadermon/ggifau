@@ -56,5 +56,5 @@ notation.
   }}
 }
 \description{
-IFAU fill scale
+Use the IFAU colors scheme for \code{ggplot2} fill colors.
 }

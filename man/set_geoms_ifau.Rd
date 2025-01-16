@@ -7,5 +7,5 @@
 set_geoms_ifau()
 }
 \description{
-Update line and bar geoms to conform with the IFAU theme
+Update line and bar geoms to conform with the IFAU theme.
 }

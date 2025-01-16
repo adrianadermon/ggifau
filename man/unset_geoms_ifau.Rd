@@ -7,5 +7,5 @@
 unset_geoms_ifau()
 }
 \description{
-Undo the changes made by \code{set_geoms_ifau()}
+Undo the changes made by \code{set_geoms_ifau()}.
 }

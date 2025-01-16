@@ -59,5 +59,5 @@ notation.
   }}
 }
 \description{
-IFAU color scale
+Use the IFAU colors scheme for \code{ggplot2} colors.
 }
